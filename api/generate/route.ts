@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 async function safeGenerate(genAI, prompt) {
     const models = ["gemini-3.6-flash", "gemini-1.5-flash-8b"];
     for (let i = 0; i < models.length; i++) {
