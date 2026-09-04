@@ -37,7 +37,7 @@ export default function Home() {
     <div className="container">
       <div className="header">
         <h1>Welcome to your <br/> comfortzone</h1>
-        <p>Funniest Captions Generator</p>
+        <p>Captions Generator</p>
       </div>
 
       <div className="search-box">
