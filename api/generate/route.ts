@@ -13,7 +13,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
         const result = await model.generateContent(`Generate 5 funny and aesthetic captions for this topic: "$Pprompt}". Give only the captions, number 1 to 5.`);
         const text = result.response.text();
         return NextResponse.json({ result: text });
-    } catch (error) {
+    } catch (error: any) {
         console.error(error);
         return NextResponse.json({ error: "failed to generate captions" }, { status: 500 });
     }
