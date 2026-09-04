@@ -1,8 +1,10 @@
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 export async function POST(req: NextRequest) {
-    try {
+try {
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
         const { prompt } = await req.json() as { prompt: string };
         if (!prompt) {
             return NextResponse.json({ error: "prompt is required" }, { status: 400 });
